@@ -29,7 +29,7 @@
         </div>
         <div class="wrap">
             <div>
-                <div class="pb orange"></div>
+                <div id="pb" class="pb orange"></div>
                 <div class="pb green"></div>
                 <div class="pb sp"></div>
             </div>
@@ -102,7 +102,6 @@
                     $('.pb.sp').mfProgressBar('direct', dir[getRandomInt(0, 3)]);
                     return false;
                 });
-/**
                 setInterval(function () {
                     var rnd = Math.random() * 100;
                     $('.pb.orange').mfProgressBar('position', rnd);
@@ -115,9 +114,7 @@
                     var rnd = Math.random() * 100;
                     $('.pb.sp').mfProgressBar('position', rnd, Math.round(Math.random() * 2000));
                 }, 1000);
-   */             
                 $('.pb').mfProgressBar();
-
             };
         </script>
     </body>

@@ -362,15 +362,15 @@
             var ret = this;
             var args = arguments;
             if (!args.length)
-                args = {};
+                args = [];
             var func = null;
             var params = null;
             this.each(function () {
                 try {
                     if (typeof args === 'object' && !('owner' in this)) {
-                        args[0].element = this;
-                        args[0].name = 'progressbar_' + arguments[0];
-                        var pb = new mfProgressBar(args[0]);
+                        var p = {};
+                        p.element = this;
+                        var pb = new mfProgressBar(p);
                         //pb.$el.data(pb);
                     }
                 } catch (e) {
@@ -385,7 +385,7 @@
                         var data = this.owner;
                         if ('function' === typeof mfProgressBar.prototype[args[0]]) {
                             ret = data[func].apply(data, params);
-                            console.info(func, params, ret);
+                            //console.info(func, params, ret);
                             return ret;
                         }
                     }
